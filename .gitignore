@@ -1,2 +1,10 @@
+# directories
 /target
 /dist
+
+# files
+.env
+docker-compose.yaml
+.vscode
+Cargo.lock
+remote_psql_test.session.sql

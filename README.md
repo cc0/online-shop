@@ -8,14 +8,14 @@ The project is a full-stack Rust website.
 
 ## Table of Contents
 
-1. [Setup Local Environment](#how-to-setup-local-environment)
-1. [Creating base project tree from the ground](#creating-the-project-from-the-ground)
-
+1. [Setup Local Environment](#how-to-setup-local-environment-linux-based)
+2. [Creating base project tree from the ground](#creating-base-project-tree-from-the-ground-linux-based)
+3. [Fresh run](#fresh-run-linux-based)
 ___
 
 
 
-### How to setup local environment (Linux based)
+## How to setup local environment (Linux based)
 
 **REQUIRED**
 
@@ -50,7 +50,7 @@ ___
 
 
 
-### Creating base project tree from the ground (Linux based)
+## Creating base project tree from the ground (Linux based)
 
 [Back to top](#table-of-contents)
 
@@ -58,8 +58,9 @@ ___
 cargo new --bin server --vcs none \
     && cargo new --bin frontend --vcs none \
     && cargo new --lib shared --vcs none \
-    && echo "[workspace]\nmembers = [\"server\", \"frontend\", \"shared\"]" \
-    | cat > Cargo.toml \
+    && sea-orm-cli migrate init \
+    && echo "[workspace]\nmembers = [\"server\", \"frontend\", \
+    \"shared\", \"migration\"]" | cat > Cargo.toml \
     && echo "/target\n/dist" | cat > .gitignore
 ```
 
@@ -103,3 +104,27 @@ SERVER_ADDR="0.0.0.0"
 SERVER_PORT="5000"
 SERVER_LOG_LEVEL="debug"
 ```
+
+___
+
+
+## Fresh run (Linux based)
+
+[Back to top](#table-of-contents)
+
+All commands are being executed in the root of the project
+
+* first terminal for database startup (creates docker container and autorun it)
+    ```bash
+    docker-compose up
+    ```
+
+* second terminal for backend startup
+    ```bash
+    cargo-watch -q -c -w server/src +x run
+    ```
+
+* third terminal for frontend startup
+    ```bash
+    trunk serve
+    ```

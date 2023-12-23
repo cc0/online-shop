@@ -1,2 +1,2 @@
 [workspace]
-members = ["server", "frontend", "shared"]
+members = ["server", "frontend", "shared", "migration"]
