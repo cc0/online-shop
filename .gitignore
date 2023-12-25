@@ -1,6 +1,6 @@
 # directories
 /target
-/dist
+dist/
 
 # files
 .env

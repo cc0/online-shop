@@ -2,9 +2,9 @@
 
 The project is a full-stack Rust website.
 
-* Backend - Axum
+* Backend - Axum (async)
 
-* frontend - Yew
+* frontend - Yew (server side rendering, sync)
 
 ## Table of Contents
 
