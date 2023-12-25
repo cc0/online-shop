@@ -142,3 +142,15 @@ All commands are being executed in the root of the project
     ```bash
     trunk serve
     ```
+
+<!-- #### How to test ?
+
+To test backend:
+```bash
+cargo test --tests -- --nocapture
+```
+
+To test frontend:
+```bash
+wasm-pack test --node
+``` -->
