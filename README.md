@@ -105,6 +105,20 @@ SERVER_PORT="5000"
 SERVER_LOG_LEVEL="debug"
 ```
 
+#### (bellow is the sea-orm-cli commands)
+
+```bash
+sea-orm-cli generate migrate init
+```
+
+```bash
+sea-orm-cli generate migrate up -n 1
+```
+
+```bash
+sea-orm-cli generate entity -o server/src/database
+```
+
 ___
 
 
